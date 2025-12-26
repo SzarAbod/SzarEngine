@@ -1,0 +1,2 @@
+# SzarEngine
+Szar Game Engine
