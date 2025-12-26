@@ -3,6 +3,9 @@
 vsxmake2022
 .idea
 .DS_Store
+
+.vscode/
+
 # Gradle files
 .gradle/
 build/
