@@ -1,6 +1,7 @@
-#pragma once
+#ifndef SZAR_HPP
+#define SZAR_HPP
 
-#include <string>
-#include <iostream>
+#include <application.hpp>
+#include <entrypoint.hpp>
 
-void print(std::string msg);
+#endif

@@ -5,31 +5,30 @@ set_languages("c++23")
 set_project("Szar")
 set_version("1.0.0")
 
-if is_mode("debug") then 
-    add_defines("DEBUG")
-else 
-    set_optimize("fastest")
-end
+local packages = {
+    "libsdl3"
+}
 
-add_includedirs("Szar/include", {public = true})
+add_requires(packages)
+
+add_includedirs("Szar/include")
 
 target("Szar")
-    set_kind("shared")
-    -- add_rules("utils.symbols.export_all", {export_classes = true})    
+    set_kind("static")
+    add_packages(packages)
     add_files("Szar/src/*.cpp")
 
 target("Game")
     set_kind("binary")
     add_deps("Szar")
+    add_packages(packages)
     add_files("Game/src/*.cpp")
-    add_headerfiles("Game/src/*.hpp")
-
 
 -- For packing and making the install file
 includes("@builtin/xpack")
 
 xpack("Game") 
-    set_formats("nsis", "deb")
+    set_formats("nsis", "zip")
     set_title("Szar Game Application")
     set_description("Game application for Szar library")
     set_author("abod <abdulrahman.mah@proton.me>")
@@ -40,12 +39,15 @@ xpack("Game")
     set_iconfile("assets/installer.ico")
     set_nsis_displayicon("assets/installer.ico")
 
-    -- Add binary target
     add_targets("Game")
-    
-    -- Include the Szar shared library
-    add_targets("Szar")
     
     on_load(function (package)
         package:set("basename", "Game-$(plat)-$(arch)-$(mode)")
+    end)
+
+xpack("Szar")
+    set_formats("zip")
+    add_targets("Szar")
+    on_load(function (package)
+        package:set("basename", "Szar-$(plat)-$(arch)-$(mode)")
     end)

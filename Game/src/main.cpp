@@ -1,10 +1,16 @@
-#include <Szar.hpp>
-#include <string>
-#include <iostream>
+#include <szar.hpp>
 
-int main() 
+class Sandbox: public szar::Application {
+public:
+    Sandbox() {}
+    ~Sandbox() {}
+};
+
+int main(int argc, char *argv[])
 {
-    print((std::string)"Hello World!");
-    std::cin.get();
+    auto app = new Sandbox();
+    app->Run();
+    delete app;
+    
     return 0;
 }
