@@ -5,4 +5,4 @@
 #include <entrypoint.hpp>
 #include <log.hpp>
 
-#endif // SZAR_HPP
+#endif // !SZAR_HPP

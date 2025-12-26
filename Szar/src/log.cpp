@@ -10,6 +10,9 @@ namespace szar
 	
 	void Log::Init()
 	{
+		if (s_CoreLogger || s_ClientLogger)
++			return;
+
 		spdlog::set_pattern("%^[%T] %n: %v%$");
 		
 		auto consoleLogger = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();

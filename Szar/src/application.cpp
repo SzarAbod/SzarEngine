@@ -7,14 +7,10 @@ constexpr int WINDOW_WIDTH = 800;
 constexpr int WINDOW_HEIGHT = 600;
 
 namespace szar {
-    Application::Application() 
-    {
-        szar::Log::Init();
-
-    }
+    Application::Application() {}
     
     Application::~Application() {}
-    
+
     void Application::Run() {
         // Initialize SDL
         if (!SDL_Init(SDL_INIT_VIDEO)) {

@@ -8,6 +8,7 @@ public:
 
 int main(int argc, char *argv[])
 {
+    szar::Log::Init();
     auto app = new Sandbox();
     app->Run();
     delete app;
