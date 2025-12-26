@@ -11,7 +11,7 @@ namespace szar
 	void Log::Init()
 	{
 		if (s_CoreLogger || s_ClientLogger)
-+			return;
+			return;
 
 		spdlog::set_pattern("%^[%T] %n: %v%$");
 		
