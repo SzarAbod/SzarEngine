@@ -23,6 +23,29 @@
 
 namespace szar 
 {
+	/**
+	 * @brief Centralized logging facade for the application.
+	 *
+	 * Provides initialization and global accessors for the engine's core and client loggers.
+	 */
+	 
+	/**
+	 * @brief Initialize the logging subsystem.
+	 *
+	 * Configures and registers the core and client loggers used by the application.
+	 */
+	 
+	/**
+	 * @brief Access the core logger instance.
+	 *
+	 * @return Reference to the shared pointer that holds the core `spdlog::logger`.
+	 */
+	 
+	/**
+	 * @brief Access the client logger instance.
+	 *
+	 * @return Reference to the shared pointer that holds the client `spdlog::logger`.
+	 */
 	class SZ_DECLSPEC Log
 	{
 	public:

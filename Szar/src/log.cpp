@@ -8,6 +8,14 @@ namespace szar
 	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
 	std::shared_ptr<spdlog::logger> Log::s_ClientLogger;
 	
+	/**
+	 * @brief Initializes the global logging subsystem for the application.
+	 *
+	 * Configures a global log pattern, creates a colorized console sink (warnings and above)
+	 * and a file sink that writes to "logs.txt", and then constructs two loggers:
+	 * the core logger named "Szar" and the client logger named "Game". Both loggers are set
+	 * to the trace level and share the configured sinks.
+	 */
 	void Log::Init()
 	{
 		spdlog::set_pattern("%^[%T] %n: %v%$");

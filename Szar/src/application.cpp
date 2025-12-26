@@ -7,14 +7,30 @@ constexpr int WINDOW_WIDTH = 800;
 constexpr int WINDOW_HEIGHT = 600;
 
 namespace szar {
+    /**
+     * @brief Constructs the Application and initializes the logging subsystem.
+     *
+     * Initializes the logging subsystem used by the application so logging is available
+     * for the application's lifetime.
+     */
     Application::Application() 
     {
         szar::Log::Init();
 
     }
     
-    Application::~Application() {}
+    /**
+ * @brief Default destructor for Application.
+ *
+ * Performs no special cleanup; relies on member destructors and RAII to release resources.
+ */
+Application::~Application() {}
     
+    /**
+     * @brief Starts the application's main loop, creates the window and renderer, and renders a centered white rectangle.
+     *
+     * Initializes the SDL video subsystem, creates a resizable window and renderer, then runs the event/render loop until a quit event or Escape key press ends execution. Each frame the screen is cleared to black and a 100x100 white rectangle is drawn centered in the window. On exit, the renderer and window are destroyed and SDL is shut down.
+     */
     void Application::Run() {
         // Initialize SDL
         if (!SDL_Init(SDL_INIT_VIDEO)) {
