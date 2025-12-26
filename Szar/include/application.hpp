@@ -12,4 +12,4 @@ namespace szar {
     };
 }
 
-#endif
+#endif // !SZAR_APPLICATION_HPP

@@ -3,5 +3,6 @@
 
 #include <application.hpp>
 #include <entrypoint.hpp>
+#include <log.hpp>
 
-#endif
+#endif // !SZAR_HPP

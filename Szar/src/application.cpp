@@ -1,4 +1,5 @@
 #include <application.hpp>
+#include <log.hpp>
 
 #include <SDL3/SDL.h>
 
@@ -7,6 +8,7 @@ constexpr int WINDOW_HEIGHT = 600;
 
 namespace szar {
     Application::Application() {}
+    
     Application::~Application() {}
 
     void Application::Run() {
