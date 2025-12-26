@@ -6,7 +6,7 @@ set_project("Szar")
 set_version("1.0.0")
 
 local packages = {
-    "libsdl3"
+    "libsdl3", "spdlog"
 }
 
 add_requires(packages)
@@ -16,6 +16,7 @@ add_includedirs("Szar/include")
 target("Szar")
     set_kind("static")
     add_packages(packages)
+    add_headerfiles("Szar/include/*.hpp")
     add_files("Szar/src/*.cpp")
 
 target("Game")

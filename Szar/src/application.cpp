@@ -1,4 +1,5 @@
 #include <application.hpp>
+#include <log.hpp>
 
 #include <SDL3/SDL.h>
 
@@ -6,9 +7,14 @@ constexpr int WINDOW_WIDTH = 800;
 constexpr int WINDOW_HEIGHT = 600;
 
 namespace szar {
-    Application::Application() {}
-    Application::~Application() {}
+    Application::Application() 
+    {
+        szar::Log::Init();
 
+    }
+    
+    Application::~Application() {}
+    
     void Application::Run() {
         // Initialize SDL
         if (!SDL_Init(SDL_INIT_VIDEO)) {

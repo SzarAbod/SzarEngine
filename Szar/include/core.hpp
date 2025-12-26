@@ -13,4 +13,5 @@
 #else
     #define SZ_DECLSPEC
 #endif
-#endif
+
+#endif // !SZAR_CORE_HPP
